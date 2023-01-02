@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import App2 from './movies_components/App_2';
+import App3 from './React_Hooks/App_3';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App2 />    {/* --->>   Single Child Component */}
+    <App3 />    {/* --->>   Single Child Component */}
      {/* -->> JSX expression have must one parent element ; ham isko div tag ke andr bhi close krskte the lkn React.StrictMode use karenge so we get additional checks and warnings */}
   </React.StrictMode> 
 );

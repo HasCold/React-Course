@@ -14,7 +14,7 @@ const Student = (props) => {  // Get props
 
 Student.propTypes = {
     name : propTypes.string,
-    agr : propTypes.number
+    age : propTypes.number
 }
 Student.defaultProps = {  // when something is not mentioned 
     name : "Name",
