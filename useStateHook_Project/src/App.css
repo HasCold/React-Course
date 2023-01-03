@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  margin: 0;
+}
+.header{
+  background-color: #10ac84;
+  padding: 8px;
+  width: 100%;
+}
+.form{
+  margin-top: 50px ;
+}
