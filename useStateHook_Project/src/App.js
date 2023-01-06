@@ -8,7 +8,6 @@ import { useState } from 'react';  // {Object Destructuring}
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
-
 function App() {
 
   const [name, setName] = useState("");
@@ -27,15 +26,48 @@ function App() {
         setData([...arr]);
   }
 
+  const handlePress = (e) => {
+    if (e.key === "Enter") {
+      AddData();      
+    }  
+  }
+
+  const timeout = (event) => {
+      console.log("Suggestion for", event.target.value);
+  }
+
+  const Debounce = (func, delay) => {
+  let id;
+  return function(...args){
+  if(id) {
+    clearTimeout(id);
+    console.log("Clearing Timeout");
+  }
+  id = setTimeout(() => {
+    func.call(this,...args);
+  }, delay);
+}
+}
+
+const Decorator = (e) => {
+  // timeout(e);
+const debouncedTimeout = Debounce(timeout, 3000);
+debouncedTimeout(e) 
+}
+
+
   return (
     <div className="App">
     <Header />
     {/* Form Section */}
     <div className='form'>
     <Stack direction="row" spacing={2}>
-    <TextField value={name} id="outlined-basic" label="Name" variant="outlined" onChange={(e) => setName(e.target.value) }/>  {/* e.target.value => shows particular event value */}
-    <TextField value={email} id="outlined-basic" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value) }/>
-    <Button variant="contained" color="success" onClick={AddData}><AddIcon /></Button>   
+    
+    <TextField onKeyPress={(e) => handlePress(e)} value={name} id="outlined-basic" label="Name" variant="outlined" onChange={(e) => { setName(e.target.value); Decorator(e)}}/>  {/* e.target.value => shows particular event value */}
+
+    <TextField onKeyPress={(e) => handlePress(e)} value={email} id="outlined-basic" label="Email" variant="outlined" onCopy={() => window.alert("Don't Copy")} onChange={(e) => setEmail(e.target.value) }/>
+
+    <Button variant="contained" color="success" onDoubleClick={() => window.alert("Doubled Clicked!!")} onClick={AddData}><AddIcon /></Button>   
     </Stack>
      </div>
       {/* Data Shown Section */}
