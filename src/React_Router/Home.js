@@ -1,9 +1,7 @@
-import Header from "./Header.js";
-import "./App.css";
-import React, {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
-function App(){
-  
+const Home = () => {
+
   const [state, setState] = useState(1);
   const [Data, setData] = useState([]);
   
@@ -21,8 +19,7 @@ function App(){
 
     return (
     <div>
-    <Header />
-      <button onClick={() => setState(state+1)}>Click Me {state}</button>
+    <button onClick={() => setState(state+1)}>Click Me {state}</button>
       {
         Data.map((element, index) => {
           return(
@@ -34,10 +31,9 @@ function App(){
           )
         })
       }
+
     </div>
-  );
+  )
 }
 
-export default App
-
-
+export default Home
