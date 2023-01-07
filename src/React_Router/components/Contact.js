@@ -1,8 +1,11 @@
+import { Link, Outlet } from "react-router-dom"
 
 const Contact = () => {
   return (
-    <div>
-    Contact
+    <div className="contact">
+    <Link to={"Insta"}><h3>Contact via Instagram</h3></Link>
+    <Link to={"Mail"}><h3>Contact via Mail</h3></Link>
+    <Outlet />
     </div>
   )
 }

@@ -17,7 +17,7 @@ const Header = () => {
                       {/* Link :- <Link></Link> */}
                       {/* Is tarah se hum navigate karnenge aur hamari application dubara reload nahi hogi khali hamara ak component render hoga  */}
     <div className="info">
-    <NavLink style={navLinkStyles} to={"/home"}>   
+    <NavLink style={navLinkStyles} to={"/Home"}>   
     <h2 style={{cursor: "pointer"}}>Home</h2>      
       </NavLink>
 

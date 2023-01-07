@@ -9,6 +9,8 @@ import {
 import About from "./components/About.js";
 import Contact from "./components/Contact.js";
 import Error from "./components/Error.jsx";
+import Insta from "./components/Insta.js";
+import Mail from "./components/Mail.js";
 
 // For the use of React Router, You have to take guidance and reference from the official documentation 'reactrouter.com'. This will help you to route your application with complete explanation.
 
@@ -23,17 +25,27 @@ function App(){
     <div>
     <Header />
     <Routes>
+    
     {/* Home */} 
-    <Route exact path="/home" element={<Home />} />   {/* <Routes /> */}  
+    <Route path="/">
+    <Route index element={<Home />} />
+    <Route exact path="/home" element={<Home />} />   {/* <Routes /> -->> Self Closing Tag */}  
+    </Route>
 
     {/* About */}
     <Route path="/about" element={<About />} />
       
     {/* Contact */}
-    <Route path="/contact" element={<Contact />} />
+    <Route path="/contact" element={<Contact />}>  {/* Nested Route */}
+    <Route index element={<Insta/>} /> {/* If we give the index so By-Default the component will open into the instagram page*/}
+    <Route path="insta" element={<Insta/>} /> 
+    <Route path="mail"  element={<Mail/>}/>
+    </Route>
     
+    {/* Error */}
     <Route path="*" element={<Error />} />
-        </Routes>
+    
+    </Routes>
     </div>
     </Router>
   );

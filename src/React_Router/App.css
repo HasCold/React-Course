@@ -18,6 +18,7 @@ h1{
 h2{
   color: white;
   padding: 0 12vw 0 15vw;
+  text-decoration-line: none;
 }
 .header{
   background-color: #1015ac;
@@ -36,4 +37,9 @@ h2{
   justify-content: space-evenly;
   padding: 10px;
   overflow-x: hidden;
+}
+.contact h3{
+  color: black;
+  display: flex;
+  justify-content: center;
 }
