@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -23,15 +24,14 @@ const Home = () => {
       {
         Data.map((element, index) => {
           return(
-              <div key={index} className= "data">
+              <Link to={`/home/${element.id}`}><div key={index} className= "data">
                 <h4>{element.firstName}</h4>
                 <h4>{element.email}</h4>
                 <h4>{element.id}</h4>
-              </div>
+              </div></Link>
           )
         })
       }
-
     </div>
   )
 }

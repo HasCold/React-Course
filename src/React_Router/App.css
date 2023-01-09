@@ -1,3 +1,7 @@
+body{
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
   display: flex;
@@ -32,14 +36,26 @@ h2{
   justify-content: space-evenly;
 }
 .data{
+  margin-top: 20px;
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-evenly;
   padding: 10px;
   overflow-x: hidden;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;;
 }
 .contact h3{
   color: black;
   display: flex;
   justify-content: center;
+}
+.userInfo{
+   color: black;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+}
+img{
+  margin: auto;
+  padding: auto;
 }

@@ -11,6 +11,7 @@ import Contact from "./components/Contact.js";
 import Error from "./components/Error.jsx";
 import Insta from "./components/Insta.js";
 import Mail from "./components/Mail.js";
+import UserDetails from "./components/UserDetails.js";
 
 // For the use of React Router, You have to take guidance and reference from the official documentation 'reactrouter.com'. This will help you to route your application with complete explanation.
 
@@ -28,8 +29,13 @@ function App(){
     
     {/* Home */} 
     <Route path="/">
-    <Route index element={<Home />} />
-    <Route exact path="/home" element={<Home />} />   {/* <Routes /> -->> Self Closing Tag */}  
+    <Route index element={<Home />} />  {/*If we give the index so By-Default the component will rendered into the home page */}
+    <Route exact path="/home" element={<Home />} />   {/* <Routes /> -->> Self Closing Tag */}      
+    </Route>
+
+    {/* For Dynamic Route Path */}
+    <Route path="/home/:userId" element={<UserDetails />} >  {/*You can give the dynamic routes by using : */}
+
     </Route>
 
     {/* About */}
