@@ -1,3 +1,5 @@
+// useMemo ham value ko memoize krne ke liye krta hai
+
 import React, { useMemo } from 'react';
 import './App.css';
 import Header from './components/Header';
