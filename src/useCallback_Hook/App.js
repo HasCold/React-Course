@@ -16,8 +16,11 @@ function App (){
 
     const Increment = () => {
         setCount((c) => c + 1);            
-        
     }
+    const Decrement = () => {
+        setCount((c) => c - 1);            
+    }
+
     const addTodo = useCallback(() => {
         setTodo((t) => [...t, "New Todo"]);  // ye spread opeartor ...t jo array me pehle se ha wo bhi print karega aur jo naya print hoga wo bhi print hoga 
     }, [todo]);  // -->> [] dependency array ka matlab kab ye function wapis se chalega ; Jab ye [todo] change hoga tab ye bar bar re-render hoga;
@@ -26,6 +29,7 @@ function App (){
     <>
         <Header />
         <div className='button'>
+        <button onClick={Decrement} style={{"marginLeft": "0.5vw"}}>-</button>
         <button onClick={Increment}>+</button>
         <h1>Count : {count}</h1>
         </div>
