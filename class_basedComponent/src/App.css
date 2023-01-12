@@ -1,0 +1,17 @@
+.header{
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: large;
+  height: 20vh;
+}
+h1{
+  text-align: center;
+}
+button{
+  display: flex;
+  margin-left: 46rem;
+  
+}
